@@ -9,14 +9,14 @@ myApp.controller('ListCtrl', ['$location', function ($location) {
 
 	_self.users = [];
 	for (var i=0; i<1000; i++) {
-		_self.users.push({name: "name", surname: "surname"});
+		_self.users.push({name: "name", surname: "surname", showEditor: false});
 	}
 
 	console.log("user loading end");
 
-	_self.updateUser = function (user) {
+	_self.editMode = function (user) {
 		console.log("updateUser");
-		user.name = "ala ma kota";
+		user.showEditor = !user.showEditor;
 	};
 
 	

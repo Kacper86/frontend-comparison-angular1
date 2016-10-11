@@ -10,11 +10,17 @@
 
 	<div ng-controller="ListCtrl as ctrl">
 		<div ng-repeat="user in ctrl.users">
-			<input type="text" ng-model="user.name"/>
-			<input type="text" ng-model="user.surname"/>
-			<button type="button" ng-click="ctrl.updateUser(user)">
+			{{ user.name }}
+			{{ user.surname }}
+
+			<button type="button" ng-click="ctrl.editMode(user)">
 				Update User
 			</button>
+
+			<div ng-if="user.showEditor">
+				<input type="text" ng-model="user.name"/>
+				<input type="text" ng-model="user.surname"/>
+			</div>
 		</div>
 	</div>
 
