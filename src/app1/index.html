@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>App 1</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+	<script src="Application.js"></script>
+</head>
+<body ng-app="myApp">
+
+	<div ng-controller="ListCtrl as ctrl">
+		<div ng-repeat="user in ctrl.users">
+			<input type="text" ng-model="user.name"/>
+			<input type="text" ng-model="user.surname"/>
+			<button type="button" ng-click="ctrl.updateUser(user)">
+				Update User
+			</button>
+		</div>
+	</div>
+
+
+
+</body>
+</html>
